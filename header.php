@@ -23,22 +23,29 @@
             <div class="container-fluid">
                 <div class="row d-flex align-items-center">
                     <div class="col-xl-3">
-                        <div class="logo">
-                            <a href="index.html">
-                                <img src="assets/img/logo.png" alt="">
-                            </a>
-                        </div>
+                        <?php
+                            if ( current_theme_supports( "custom-logo" ) ):
+                                ?>
+                                <div class="logo">
+                                    <?php the_custom_logo(); ?>
+                                </div>
+                            <?php
+                            endif;
+                            ?>
                     </div>
                     <div class="col-xl-6">
                         <!-- nav area 	 -->
                         <nav class="nav">
                             <div class="main_menu">
-                                <ul>
-                                    <li><a href="#">Condition</a></li>
-                                    <li><a href="#">Procedures</a></li>
-                                    <li><a href="#">Doctors</a></li>
-                                    <li><a href="#">Location</a></li>
-                                </ul>
+                                <?php
+                                    wp_nav_menu(
+                                        array(
+                                            'theme_location' => 'topmenu',
+                                            'menu_id'        => 'topmenucontainer',
+                                            'menu_class'     => 'list-inline text-center',
+                                        )
+                                    );
+                                ?>
                             </div>
                         </nav>
                     </div>

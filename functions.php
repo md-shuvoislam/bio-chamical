@@ -14,6 +14,17 @@ function biochamical_bootstrapping(){
     add_theme_support( "title-tag" );
     register_nav_menu( "topmenu", __( "Top Menu", "biochamical" ) );
     register_nav_menu( "footermenu", __( "Footer Menu", "biochamical" ) );
+
+    $biochamical_custom_logo_defaults = array(
+        "width"  => '235',
+        "height" => '70',
+        'flex-height'          => true,
+        'flex-width'           => true,
+        'header-text'          => array( 'site-title', 'site-description' ),
+        'unlink-homepage-logo' => true, 
+    );
+    add_theme_support( "custom-logo", $biochamical_custom_logo_defaults );
+
 }
 add_action( "after_setup_theme", "biochamical_bootstrapping" );
 
@@ -36,3 +47,63 @@ function biochamical_assets() {
 }
 
 add_action( "wp_enqueue_scripts", "biochamical_assets" );
+
+// theme sidebar widgets
+
+function biochamical_sidebar() {
+    register_sidebar(
+        array(
+            'name'          => __( 'Footer One', 'biochamical' ),
+            'id'            => 'footer-1',
+            'description'   => __( 'Footer One Widget', 'biochamical' ),
+            'before_widget' => '<section id="%1$s" class="widget %2$s">',
+            'after_widget'  => '</section>',
+            'before_title'  => '<h2 class="widget-title">',
+            'after_title'   => '</h2>'
+        )
+    );
+
+    register_sidebar(
+        array(
+            'name'          => __( 'Footer Two', 'biochamical' ),
+            'id'            => 'footer-2',
+            'description'   => __( "Footer Two Widget", 'biochamical' ),
+            'before_widget' => '<section id="%1$s" class="widget %2$s">',
+            'after_widget'  => '</section>',
+            'before_title'  => '<h2 class="widget-title">',
+            'after_title'   => '</h2>'
+        )
+    );
+
+    register_sidebar(
+        array(
+            'name'          => __( 'Footer Three', 'biochamical' ),
+            'id'            => 'footer-3',
+            'description'   => __( "Footer Three Widget", 'biochamical' ),
+            'before_widget' => '<section id="%1$s" class="widget %2$s">',
+            'after_widget'  => '</section>',
+            'before_title'  => '<h2 class="widget-title">',
+            'after_title'   => '</h2>'
+        )
+    );
+    
+    register_sidebar(
+        array(
+            'name'          => __( 'Footer Four', 'biochamical' ),
+            'id'            => 'footer-4',
+            'description'   => __( "Footer Four Widget", 'biochamical' ),
+            'before_widget' => '<section id="%1$s" class="widget %2$s">',
+            'after_widget'  => '</section>',
+            'before_title'  => '<h2 class="widget-title">',
+            'after_title'   => '</h2>'
+        )
+    );
+
+}
+
+add_action( "widgets_init", "biochamical_sidebar" );
+
+/**
+ * TGM Activation
+ */
+require dirname( __FILE__ ) . '/inc/tgm/tgm-init.php';

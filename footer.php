@@ -4,7 +4,7 @@
                     <div class="row">
                         <div class="col-xl-6">
                             <div class="contact-image">
-                                <img src="assets/img/contact.png" alt="">
+                                <img src="<?php echo get_template_directory_uri(); ?>/assets/img/contact.png" alt="">
                             </div>
                         </div>
                         <div class="col-xl-6">
@@ -61,55 +61,38 @@
                         <div class="row">
                             <div class="col-xl-3 ">
                                 <div class="footer_top_widget_area float-start">
-                                    <ul>
-                                        <li><a href="# ">Home</a></li>
-                                        <li><a href="# ">Why Chose Us </a></li>
-                                        <li><a href="# ">Sugetions </a></li>
-                                        <li><a href="# ">condition Address </a></li>
-                                    </ul>
+                                <?php
+                                    if(is_active_sidebar("footer-1")){
+                                        dynamic_sidebar("footer-1");
+                                    }
+                                ?>
                                 </div>
                             </div>
                             <div class="col-xl-3 ">
                                 <div class="footer_top_widget_area ">
-                                    <h2>Locations</h2>
-                                    <address>
-                                        Street	935 Buena Vista Avenue
-                                        City	Medford
-
-                                        Street	935 Buena Vista Avenue
-                                        City	Medford
-
-                                        Street	935 Buena Vista Avenue
-                                        City	Medford
-
-                                        Street	935 Buena Vista Avenue
-                                        City	Medford
-                                    </address>
-                                    <a href="#" class="text-green"> See all locations</a>
+                                    <?php
+                                        if(is_active_sidebar("footer-2")){
+                                            dynamic_sidebar("footer-2");
+                                        }
+                                    ?>
                                 </div>
                             </div>
                             <div class="col-xl-3 ">
                                 <div class="footer_top_widget_area service_footer">
-                                    <h2>Services</h2>
-                                    <ul>
-                                        <li><a href="# ">Pain / Othopedic </a></li>
-                                        <li><a href="# ">Pain / Othopedic </a></li>
-                                        <li><a href="# ">Pain / Othopedic </a></li>
-                                        <li><a href="# ">Pain / Othopedic </a></li>
-                                        <li><a href="# ">Pain / Othopedic </a></li>
-                                    </ul>
+                                    <?php
+                                        if(is_active_sidebar("footer-3")){
+                                            dynamic_sidebar("footer-3");
+                                        }
+                                    ?>
                                 </div>
                             </div>
                             <div class="col-xl-3 ">
                                 <div class="footer_top_widget_area footer_supprt">
-                                    <h2>support</h2>
-                                    <ul>
-                                        <li><a href="# ">Faqs</a></li>
-                                        <li><a href="# ">Faqs</a></li>
-                                        <li><a href="# ">Faqs</a></li>
-                                        <li><a href="# ">Faqs</a></li>
-                                        <li><a href="# ">Faqs</a></li>
-                                    </ul>
+                                    <?php
+                                        if(is_active_sidebar("footer-4")){
+                                            dynamic_sidebar("footer-4");
+                                        }
+                                    ?>
                                 </div>
                             </div>
                         </div>
@@ -120,7 +103,7 @@
                         <div class="row  d-flex align-items-center">
                             <div class="col-xl-3 ">
                                 <div class="main_footer_widgets ">
-                                    <img src="assets/img/logo.png " alt=" ">
+                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/img/logo.png " alt=" ">
                                 </div>
                             </div>
                             <div class="col-xl-6  ">
@@ -130,11 +113,15 @@
                             </div>
                             <div class="col-xl-3 ">
                                 <div class="main_footer_widgets ">
-                                    <ul>
-                                        <li><a href="# ">privacy</a></li>
-                                        <li><a href="# ">privacy</a></li>
-                                        <li><a href="# ">privacy</a></li>
-                                    </ul>
+                                <?php
+                                    wp_nav_menu(
+                                        array(
+                                            'theme_location' => 'footermenu',
+                                            'menu_id'        => 'footermenucontainer',
+                                            'menu_class'     => 'list-inline text-right',
+                                        )
+                                    );
+                                    ?>
                                 </div>
                             </div>
                         </div>
