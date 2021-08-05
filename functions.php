@@ -29,9 +29,9 @@ function biochamical_assets() {
     wp_enqueue_style( "biochamical-css", get_stylesheet_uri(), null, VERSION );
 
 
-    wp_enqueue_script( "modernizr-js", get_theme_file_uri( "/assets/js/popper.js" ), null, "1.0" );
-    wp_enqueue_script( "pace-js", get_theme_file_uri( "/assets/js/bootstrap.min.js" ), null, "1.0" );
-    wp_enqueue_script( "plugins-js", get_theme_file_uri( "/assets/js/owl.carousel.min.js" ), array( "jquery" ), "1.0", true );
+    wp_enqueue_script( "popper-js", get_theme_file_uri( "/assets/js/popper.js" ), null, "1.0" );
+    wp_enqueue_script( "bootstrap-js", get_theme_file_uri( "/assets/js/bootstrap.min.js" ), null, "1.0" );
+    wp_enqueue_script( "carousel-js", get_theme_file_uri( "/assets/js/owl.carousel.min.js" ), array( "jquery" ), "1.0", true );
     wp_enqueue_script( "main-js", get_theme_file_uri( "/assets/js/main.js" ), array( "jquery" ), "1.0", true );
 }
 
