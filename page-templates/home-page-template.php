@@ -142,6 +142,7 @@ get_header();
                 </div>
             </div>
         </section>
+
         <section id="ourdoctors">
             <div class="our_doctor_area">
                 <div class="our_doctor_des_area">
@@ -164,113 +165,13 @@ get_header();
                         </div>
                     </div>
                 </div>
-                <div class="our_doctor_box ">
-                    <div class="our_doc_carousel">
-                        <div class="container">
-                            <div class="row d-flex align-items-center">
-                                <div class="doc_slide">
-                                    <div class="doc-box">
-                                        <div class="img-area">
-                                            <img src="<?php echo get_template_directory_uri(); ?>/assets/img/dr1.png" alt="">
-                                        </div>
-                                        <div class="doc_text_area">
-                                            <h2>DR.DOSHI</h2>
-                                            <P>
-                                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur quaerat id nostrum veritatis, reprehenderit corporis?
-                                            </P>
-                                            <a href="#" class="doc_details text-green">View Full Details</a>
-                                        </div>
-                                    </div>
 
-                                    <div class="doc-box">
-                                        <div class="img-area">
-                                            <img src="<?php echo get_template_directory_uri(); ?>/assets/img/dr1.png" alt="">
-                                        </div>
-                                        <div class="doc_text_area">
-                                            <h2>DR.DOSHI</h2>
-                                            <P>
-                                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur quaerat id nostrum veritatis, reprehenderit corporis?
-                                            </P>
-                                            <a href="#" class="doc_details text-green">View Full Details</a>
-                                        </div>
-                                    </div>
+                <?php echo do_shortcode('[doctor]');?>
 
-
-                                    <div class="doc-box">
-                                        <div class="img-area">
-                                            <img src="<?php echo get_template_directory_uri(); ?>/assets/img/dr1.png" alt="">
-                                        </div>
-                                        <div class="doc_text_area">
-                                            <h2>DR.DOSHI</h2>
-                                            <P>
-                                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur quaerat id nostrum veritatis, reprehenderit corporis?
-                                            </P>
-                                            <a href="#" class="doc_details text-green">View Full Details</a>
-                                        </div>
-                                    </div>
-
-
-                                    <div class="doc-box">
-                                        <div class="img-area">
-                                            <img src="<?php echo get_template_directory_uri(); ?>/assets/img/dr1.png" alt="">
-                                        </div>
-                                        <div class="doc_text_area">
-                                            <h2>DR.DOSHI</h2>
-                                            <P>
-                                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur quaerat id nostrum veritatis, reprehenderit corporis?
-                                            </P>
-                                            <a href="#" class="doc_details text-green">View Full Details</a>
-                                        </div>
-                                    </div>
-
-                                    <div class="doc-box">
-                                        <div class="img-area">
-                                            <img src="<?php echo get_template_directory_uri(); ?>/assets/img/dr1.png" alt="">
-                                        </div>
-                                        <div class="doc_text_area">
-                                            <h2>DR.DOSHI</h2>
-                                            <P>
-                                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur quaerat id nostrum veritatis, reprehenderit corporis?
-                                            </P>
-                                            <a href="#" class="doc_details text-green">View Full Details</a>
-                                        </div>
-                                    </div>
-
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
             </div>
         </section>
-        <section id="brand">
-            <div class="brand_area">
-                <div class="container">
-                    <div class="row">
-                        <div class="brand_carousel">
-                            <div class="brand-slide">
 
-                                <div class="brand_slide_img">
-                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/img/logo.png" alt="">
-                                </div>
-                                <div class="brand_slide_img">
-                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/img/logo.png" alt="">
-                                </div>
-                                <div class="brand_slide_img">
-                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/img/logo.png" alt="">
-                                </div>
-                                <div class="brand_slide_img">
-                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/img/logo.png" alt="">
-                                </div>
-                                <div class="brand_slide_img">
-                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/img/logo.png" alt="">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+        <?php echo do_shortcode('[brand]');?>
 
 
 <?php get_footer(); ?>

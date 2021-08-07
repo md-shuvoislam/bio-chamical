@@ -135,7 +135,9 @@ function biochamical_services() {
         'post_type'              => 'service',
         'order'                  => 'DESC',
         'posts_per_page'         => '-1',
-        );
+        'public' => false,
+        'show_ui' => true
+    );
         
         $service = new WP_Query( $args ); ?>
 
@@ -172,3 +174,93 @@ function biochamical_services() {
     <?php return ob_get_clean();
 }
 add_shortcode( 'services', 'biochamical_services' );
+
+
+// brand
+
+function brand_shortcode() {
+
+    ob_start();?> 
+
+    <?php   $args = array(
+        'post_type'              => 'brand',
+        'order'                  => 'DESC',
+        'posts_per_page'         => '-1',
+        );
+        
+        $brand = new WP_Query( $args ); ?>
+
+        <section id="brand">
+            <div class="brand_area">
+                <div class="container">
+                    <div class="row">
+                        <div class="brand_carousel">
+                            <div class="brand-slide">
+                                <?php while ($brand->have_posts()): $brand->the_post(); ?>
+                                <div class="brand_slide_img">
+                                    <?php if ( has_post_thumbnail() ) : ?>
+                                        <?php the_post_thumbnail(); ?>
+                                    <?php endif; ?>
+                                </div>
+                                <?php
+                                endwhile;
+                                ?>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <?php wp_reset_query();?>
+            </div>
+        </section>
+
+    <?php return ob_get_clean();
+}
+add_shortcode( 'brand', 'brand_shortcode' );
+
+
+// doctors
+
+
+function doctor_shortcode() {
+
+    ob_start();?> 
+
+    <?php   $args = array(
+        'post_type'              => 'doctor',
+        'order'                  => 'DESC',
+        'posts_per_page'         => '-1',
+        );
+        
+        $doctor = new WP_Query( $args ); ?>
+
+        <div class="our_doctor_box ">
+            <div class="our_doc_carousel">
+                <div class="container">
+                    <div class="row d-flex align-items-center">
+                        <div class="doc_slide">
+                            <?php while ($doctor->have_posts()): $doctor->the_post(); ?>
+                            <div class="doc-box">
+                                <div class="img-area">
+                                    <?php if ( has_post_thumbnail() ) : ?>
+                                        <?php the_post_thumbnail(); ?>
+                                    <?php endif; ?>
+                                </div>
+                                <div class="doc_text_area">
+                                    <h2><?php the_title(); ?></h2>
+                                    <P><?php the_content(); ?></P>
+                                    <a href="<?php the_permalink(); ?>" class="doc_details text-green">View Full Details</a>
+                                </div>
+                            </div>
+                            <?php
+                            endwhile;
+                            ?>
+                        </div>
+                    </div>
+                </div>
+                <?php wp_reset_query();?>
+            </div>
+        </div>
+
+    <?php return ob_get_clean();
+}
+add_shortcode( 'doctor', 'doctor_shortcode' );
