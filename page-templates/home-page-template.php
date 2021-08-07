@@ -5,6 +5,57 @@
 get_header();
 ?>
 
+<!-- hero section start here  -->
+<main>
+        <!-- site contact us form -->
+        <section id="hero">
+            <div class="hero_area">
+                <div class="container">
+                    <div class="row d-flex align-items-center ">
+                        <div class="col-xl-6 col-md-6 col-sm-12 col-xs-12">
+                            <div class="hero_sec_text_area text-white">
+                                <h2>Welcome To National Steam Cell Centers</h2>
+                                <p>
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae voluptatem autem consectetur
+                                </p>
+                                <a href="#" class="find_doctor_btn text-white">
+                                    <i class="fas fa-play text-white"></i> Find Doctor
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <div class="hero_contact_area">
+                <div class="hero_contact_form">
+                    <h2>Contact Us</h2>
+                    <p>Our team will get back to you</p>
+                    <form action="" class="hero_area_contact_form" method="" enctype="">
+                        <input type="text" name="name" placeholder="Full Name" class="form-control">
+                        <input type="email" name="email" placeholder="Your Email" class="form-control">
+                        <input type="text" name="phone-number" placeholder="Your Mobile Number" class="form-control">
+                        <select name="nearest_location" id="" class="nearest_location_select">
+                            <option value="">Nearest Location  </option>
+                            <option value="">California</option>
+                            <option value="">Texas</option>
+                            <option value="">Florida</option>
+                            <option value="">Alaska</option>
+                        </select>
+                        <input type="text" name="msg" placeholder="How can we help you?" class="form-control">
+                        <div class="hero_area_contact_submit_btn">
+                            <button class="custom_btn btn" type="submit">
+                                Submit
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+        </section>
+
        <!-- service section -->
        <section id="services">
             <div class="service_area">

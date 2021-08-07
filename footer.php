@@ -103,12 +103,14 @@
                         <div class="row  d-flex align-items-center">
                             <div class="col-xl-3 ">
                                 <div class="main_footer_widgets ">
-                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/img/logo.png " alt=" ">
+                                    <?php if( function_exists("the_field") ): ?>
+                                        <img src="<?php the_field('footer_log', 'option'); ?>" />
+                                    <?php endif; ?>          
                                 </div>
                             </div>
                             <div class="col-xl-6  ">
                                 <div class="main_footer_widgets text-center ">
-                                    &copy all roght reserved by me
+                                    <?php the_field('footer_copyright', 'option'); ?>
                                 </div>
                             </div>
                             <div class="col-xl-3 ">

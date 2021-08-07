@@ -107,3 +107,20 @@ add_action( "widgets_init", "biochamical_sidebar" );
  * TGM Activation
  */
 require dirname( __FILE__ ) . '/inc/tgm/tgm-init.php';
+
+
+// theme options
+
+if( function_exists('acf_add_options_page') ) {
+    
+    acf_add_options_page();
+
+    acf_add_options_page(array(
+        'page_title'    => 'Theme Options',
+        'menu_title'    => 'Theme Options',
+        'menu_slug'     => 'theme-general-settings',
+        'capability'    => 'edit_posts',
+        'redirect'      => false
+    ));
+    
+}
