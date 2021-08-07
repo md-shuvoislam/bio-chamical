@@ -14,11 +14,8 @@ get_header();
                     <div class="row d-flex align-items-center ">
                         <div class="col-xl-6 col-md-6 col-sm-12 col-xs-12">
                             <div class="hero_sec_text_area text-white">
-                                <h2>Welcome To National Steam Cell Centers</h2>
-                                <p>
-                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae voluptatem autem consectetur
-                                </p>
-                                <a href="#" class="find_doctor_btn text-white">
+                                <?php the_field('hero_area_text'); ?>
+                                <a href="<?php the_field('hero_area_button_link'); ?>" class="find_doctor_btn text-white">
                                     <i class="fas fa-play text-white"></i> Find Doctor
                                 </a>
                             </div>
@@ -33,24 +30,7 @@ get_header();
                 <div class="hero_contact_form">
                     <h2>Contact Us</h2>
                     <p>Our team will get back to you</p>
-                    <form action="" class="hero_area_contact_form" method="" enctype="">
-                        <input type="text" name="name" placeholder="Full Name" class="form-control">
-                        <input type="email" name="email" placeholder="Your Email" class="form-control">
-                        <input type="text" name="phone-number" placeholder="Your Mobile Number" class="form-control">
-                        <select name="nearest_location" id="" class="nearest_location_select">
-                            <option value="">Nearest Location  </option>
-                            <option value="">California</option>
-                            <option value="">Texas</option>
-                            <option value="">Florida</option>
-                            <option value="">Alaska</option>
-                        </select>
-                        <input type="text" name="msg" placeholder="How can we help you?" class="form-control">
-                        <div class="hero_area_contact_submit_btn">
-                            <button class="custom_btn btn" type="submit">
-                                Submit
-                            </button>
-                        </div>
-                    </form>
+                    <?php echo do_shortcode('[wpforms id="51"]'); ?>
                 </div>
             </div>
 
@@ -77,68 +57,9 @@ get_header();
                         </div>
                     </div>
                 </div>
-                <div class="services_area_main">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-xl-6">
-                                <div class="service_single_box">
-                                    <div class="service_box_img_area">
-                                        <img src="<?php echo get_template_directory_uri(); ?>/assets/img/service1.png" alt="">
-                                    </div>
-                                    <div class="service_box_text-area">
-                                        <h3>Pain / Orthopedic</h3>
-                                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Temporibus, ratione enim?distinctio dolorem voluptatum similique assumenda?</p>
-                                        <div class="service_learn_more">
-                                            <a href="#" class="">Learn more</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-xl-6">
-                                <div class="service_single_box">
-                                    <div class="service_box_img_area">
-                                        <img src="<?php echo get_template_directory_uri(); ?>/assets/img/service2.png" alt="">
-                                    </div>
-                                    <div class="service_box_text-area">
-                                        <h3>Pain / Orthopedic</h3>
-                                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Temporibus, ratione enim?distinctio dolorem voluptatum similique assumenda?</p>
-                                        <div class="service_learn_more">
-                                            <a href="#" class="">Learn more</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-xl-6">
-                                <div class="service_single_box">
-                                    <div class="service_box_img_area">
-                                        <img src="<?php echo get_template_directory_uri(); ?>/assets/img/service3.png" alt="">
-                                    </div>
-                                    <div class="service_box_text-area">
-                                        <h3>Pain / Orthopedic</h3>
-                                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Temporibus, ratione enim?distinctio dolorem voluptatum similique assumenda?</p>
-                                        <div class="service_learn_more">
-                                            <a href="#" class="">Learn more</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-xl-6">
-                                <div class="service_single_box">
-                                    <div class="service_box_img_area">
-                                        <img src="<?php echo get_template_directory_uri(); ?>/assets/img/service4.png" alt="">
-                                    </div>
-                                    <div class="service_box_text-area">
-                                        <h3>Pain / Orthopedic</h3>
-                                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Temporibus, ratione enim?distinctio dolorem voluptatum similique assumenda?</p>
-                                        <div class="service_learn_more">
-                                            <a href="#" class="">Learn more</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                
+                <?php echo do_shortcode('[services]');?>
+
             </div>
         </section>
         <section id="portfolio">

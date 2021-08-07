@@ -124,3 +124,51 @@ if( function_exists('acf_add_options_page') ) {
     ));
     
 }
+
+// services
+
+function biochamical_services() {
+
+    ob_start();?> 
+
+    <?php   $args = array(
+        'post_type'              => 'service',
+        'order'                  => 'DESC',
+        'posts_per_page'         => '-1',
+        );
+        
+        $service = new WP_Query( $args ); ?>
+
+        <div class="services_area_main">
+            <div class="container">
+                <div class="row">
+                    <?php while ($service->have_posts()): $service->the_post(); ?>
+                    <div class="col-xl-6">
+                        <div class="service_single_box">
+                            <div class="service_box_img_area">
+                                <?php if ( has_post_thumbnail() ) : ?>
+                                    <a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
+                                        <?php the_post_thumbnail(); ?>
+                                    </a>
+                                <?php endif; ?>                            
+                            </div>
+                            <div class="service_box_text-area">
+                                <h3><?php the_title(); ?></h3>
+                                <p><?php the_content(); ?></p>
+                                <div class="service_learn_more">
+                                    <a href="<?php the_permalink(); ?>" class="">Learn more</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <?php
+                    endwhile;
+                    ?>
+                </div>
+            </div>
+            <?php wp_reset_query();?>
+        </div>
+
+    <?php return ob_get_clean();
+}
+add_shortcode( 'services', 'biochamical_services' );

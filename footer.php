@@ -4,7 +4,9 @@
                     <div class="row">
                         <div class="col-xl-6">
                             <div class="contact-image">
-                                <img src="<?php echo get_template_directory_uri(); ?>/assets/img/contact.png" alt="">
+                                <?php if( function_exists("the_field") ): ?>
+                                    <img src="<?php the_field('footer_top_image', 'option'); ?>" />
+                                <?php endif; ?>                               
                             </div>
                         </div>
                         <div class="col-xl-6">
@@ -13,41 +15,7 @@
                                     Contact Us
                                 </h2>
                                 <h3>Schedule a Free Consultation</h3>
-                                <form action="" method="" enctype="">
-                                    <div class="form-group">
-                                        <label for="full Name">Full Name</label>
-                                        <input type="text" name="full_name" class="">
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="full Name">Full Name</label>
-                                        <input type="text" name="full_name" class="">
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="full Name">Full Name</label>
-                                        <input type="text" name="full_name" class="">
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="full Name">Full Name</label>
-                                        <select name="nearest_location" id="" class=" selectlocation">
-                                            <option value="">Nearest Location  </option>
-                                            <option value="">California</option>
-                                            <option value="">Texas</option>
-                                            <option value="">Florida</option>
-                                            <option value="">Alaska</option>
-                                        </select>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="full Name">Full Name</label>
-                                        <input type="text" name="full_name" class="">
-                                    </div>
-                                    <div class="submit_area d-flex align-items-center">
-                                        <form action="">
-                                            <input type="checkbox" class="text-green bg-success check">
-                                        </form>
-                                        <p>By submitting you agree to be communicated via email sms</p>
-                                        <button class="btn " type="submit ">Submit</button>
-                                    </div>
-                                </form>
+                                <?php echo do_shortcode('[wpforms id="51"]'); ?>
                             </div>
                         </div>
                     </div>
