@@ -45,12 +45,12 @@ get_header();
                             <div class="col-xl-6 offset-3">
                                 <div class="service_area_title">
                                     <h2>
-                                        Our Services
+                                        <?php the_field('section_title'); ?>
                                     </h2>
                                 </div>
                                 <div class="service_area_description">
                                     <p>
-                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus beatae sapiente inventore! amet consectetur
+                                        <?php the_field('section_sub_title'); ?>
                                     </p>
                                 </div>
                             </div>
@@ -152,12 +152,10 @@ get_header();
                                 <div class="our_doctors_des">
                                     <div class="our_doc_title">
                                         <h2>
-                                            Our Doctors
+                                        <?php the_field('doctor_area_title'); ?>
                                         </h2>
                                         <div class="our_doc_detail">
-                                            <p>
-                                                Lorem ipsum dolor sit amet consectetur adipisicing elit adipisicing elit adipisicing elit
-                                            </p>
+                                        <?php the_field('doctor_area_sub_title'); ?>
                                         </div>
                                     </div>
                                 </div>
